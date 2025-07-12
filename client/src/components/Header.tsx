@@ -39,16 +39,16 @@ export default function Header({ onCartOpen, onAuthOpen }: HeaderProps) {
 
         {/* Main Navigation */}
         <nav className="flex items-center justify-between py-4">
-          <div className="flex items-center space-x-8">
-            <Link href="/" className="text-2xl font-bold text-deep-plum">
+          <div className="flex items-center flex-1 mr-4">
+            <Link href="/" className="text-xl md:text-2xl font-bold text-deep-plum whitespace-nowrap">
               <span className="text-dusty-rose">Amalia</span> Haven
             </Link>
-            <div className="hidden lg:flex items-center space-x-8">
+            <div className="hidden lg:flex items-center space-x-6 ml-8">
               {navigation.map((item) => (
                 <Link
                   key={item.name}
                   href={item.href}
-                  className={`font-medium transition-colors ${
+                  className={`font-medium transition-colors whitespace-nowrap ${
                     location.startsWith(item.href)
                       ? "text-dusty-rose"
                       : "text-deep-plum hover:text-dusty-rose"
@@ -60,30 +60,30 @@ export default function Header({ onCartOpen, onAuthOpen }: HeaderProps) {
             </div>
           </div>
 
-          <div className="flex items-center space-x-4">
+          <div className="flex items-center space-x-2 md:space-x-4">
             {/* Search Bar */}
             <div className="hidden md:block">
               <form onSubmit={handleSearch} className="relative">
                 <input
                   type="text"
-                  placeholder="Search for products..."
+                  placeholder="Search products..."
                   value={searchQuery}
                   onChange={(e) => setSearchQuery(e.target.value)}
-                  className="w-64 pl-10 pr-4 py-2 border border-dusty-rose/20 rounded-full focus:outline-none focus:ring-2 focus:ring-dusty-rose/30"
+                  className="w-48 lg:w-64 pl-10 pr-4 py-2 border border-dusty-rose/20 rounded-full focus:outline-none focus:ring-2 focus:ring-dusty-rose/30"
                 />
                 <Search className="absolute left-3 top-2.5 h-4 w-4 text-dusty-rose/50" />
               </form>
             </div>
 
             {/* User Actions */}
-            <div className="flex items-center space-x-4">
+            <div className="flex items-center space-x-2">
               <button
                 onClick={onAuthOpen}
                 className="p-2 text-deep-plum hover:text-dusty-rose transition-colors"
               >
                 <User className="h-5 w-5" />
               </button>
-              <button className="p-2 text-deep-plum hover:text-dusty-rose transition-colors">
+              <button className="hidden sm:block p-2 text-deep-plum hover:text-dusty-rose transition-colors">
                 <Heart className="h-5 w-5" />
               </button>
               <button
@@ -115,22 +115,24 @@ export default function Header({ onCartOpen, onAuthOpen }: HeaderProps) {
                 <Link
                   key={item.name}
                   href={item.href}
-                  className="text-deep-plum hover:text-dusty-rose font-medium transition-colors"
+                  className="text-deep-plum hover:text-dusty-rose font-medium transition-colors py-2"
                   onClick={() => setIsMenuOpen(false)}
                 >
                   {item.name}
                 </Link>
               ))}
-              <form onSubmit={handleSearch} className="relative mt-4">
-                <input
-                  type="text"
-                  placeholder="Search for products..."
-                  value={searchQuery}
-                  onChange={(e) => setSearchQuery(e.target.value)}
-                  className="w-full pl-10 pr-4 py-2 border border-dusty-rose/20 rounded-full focus:outline-none focus:ring-2 focus:ring-dusty-rose/30"
-                />
-                <Search className="absolute left-3 top-2.5 h-4 w-4 text-dusty-rose/50" />
-              </form>
+              <div className="md:hidden">
+                <form onSubmit={handleSearch} className="relative mt-4">
+                  <input
+                    type="text"
+                    placeholder="Search for products..."
+                    value={searchQuery}
+                    onChange={(e) => setSearchQuery(e.target.value)}
+                    className="w-full pl-10 pr-4 py-2 border border-dusty-rose/20 rounded-full focus:outline-none focus:ring-2 focus:ring-dusty-rose/30"
+                  />
+                  <Search className="absolute left-3 top-2.5 h-4 w-4 text-dusty-rose/50" />
+                </form>
+              </div>
             </div>
           </div>
         )}

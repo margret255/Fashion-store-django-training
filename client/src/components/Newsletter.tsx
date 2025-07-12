@@ -48,13 +48,13 @@ export default function Newsletter() {
               placeholder="Enter your email address"
               value={email}
               onChange={(e) => setEmail(e.target.value)}
-              className="flex-1 px-6 py-4 rounded-full text-deep-plum placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-white/30 border-0"
+              className="flex-1 px-4 md:px-6 py-3 md:py-4 rounded-full text-deep-plum placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-white/30 border-0"
               disabled={isLoading}
             />
             <Button
               type="submit"
               disabled={isLoading}
-              className="bg-white text-dusty-rose px-8 py-4 rounded-full font-semibold hover:bg-gray-100 transition-colors disabled:opacity-50"
+              className="bg-white text-dusty-rose px-6 md:px-8 py-3 md:py-4 rounded-full font-semibold hover:bg-gray-100 transition-colors disabled:opacity-50"
             >
               {isLoading ? "Subscribing..." : "Subscribe"}
             </Button>

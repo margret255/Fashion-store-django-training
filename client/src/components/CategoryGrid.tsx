@@ -14,7 +14,7 @@ export default function CategoryGrid() {
           </p>
         </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-6">
+        <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 gap-4 md:gap-6">
           {categories.map((category) => (
             <Link
               key={category.id}
@@ -30,9 +30,9 @@ export default function CategoryGrid() {
                 }}
               >
                 <div className="absolute inset-0 bg-gradient-to-t from-deep-plum/60 to-transparent group-hover:from-deep-plum/80 transition-all duration-300" />
-                <div className="absolute bottom-4 left-4 text-white">
-                  <h3 className="text-xl font-semibold mb-2">{category.name}</h3>
-                  <p className="text-sm text-white/80">{category.description}</p>
+                <div className="absolute bottom-2 md:bottom-4 left-2 md:left-4 text-white">
+                  <h3 className="text-sm md:text-xl font-semibold mb-1 md:mb-2">{category.name}</h3>
+                  <p className="text-xs md:text-sm text-white/80 hidden sm:block">{category.description}</p>
                 </div>
               </div>
             </Link>
