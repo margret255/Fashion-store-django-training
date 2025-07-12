@@ -34,7 +34,7 @@ export default function Newsletter() {
   };
 
   return (
-    <section className="py-16 bg-dusty-rose">
+    <section className="py-16 bg-dusty-rose dark:bg-gray-700">
       <div className="container mx-auto px-4">
         <div className="max-w-2xl mx-auto text-center text-white">
           <h2 className="text-3xl md:text-4xl font-bold mb-4">Stay in the Loop</h2>

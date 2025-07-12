@@ -47,17 +47,17 @@ export default function ProductGrid({ products, title, subtitle, showFilters = f
   });
 
   return (
-    <section className="py-16 bg-warm-ivory">
+    <section className="py-16 bg-warm-ivory dark:bg-gray-800">
       <div className="container mx-auto px-4">
         <div className="flex flex-col lg:flex-row justify-between items-start lg:items-center mb-8 md:mb-12">
           <div className="mb-6 lg:mb-0">
             {title && (
-              <h2 className="text-2xl md:text-3xl lg:text-4xl font-bold text-deep-plum mb-4">
+              <h2 className="text-2xl md:text-3xl lg:text-4xl font-bold text-deep-plum dark:text-white mb-4">
                 {title}
               </h2>
             )}
             {subtitle && (
-              <p className="text-gray-600 text-base md:text-lg">{subtitle}</p>
+              <p className="text-gray-600 dark:text-gray-300 text-base md:text-lg">{subtitle}</p>
             )}
           </div>
           
@@ -72,7 +72,7 @@ export default function ProductGrid({ products, title, subtitle, showFilters = f
                     className={`px-4 md:px-6 py-2 md:py-3 rounded-full font-medium transition-colors whitespace-nowrap ${
                       filter === filterOption.key
                         ? "bg-soft-mauve text-white hover:bg-soft-mauve/80"
-                        : "text-deep-plum hover:text-dusty-rose"
+                        : "text-deep-plum dark:text-white hover:text-dusty-rose"
                     }`}
                   >
                     {filterOption.label}
@@ -83,7 +83,7 @@ export default function ProductGrid({ products, title, subtitle, showFilters = f
               <select
                 value={sortBy}
                 onChange={(e) => setSortBy(e.target.value)}
-                className="px-4 py-2 border border-dusty-rose/20 rounded-full focus:outline-none focus:ring-2 focus:ring-dusty-rose/30 w-full sm:w-auto"
+                className="px-4 py-2 border border-dusty-rose/20 dark:border-gray-600 rounded-full focus:outline-none focus:ring-2 focus:ring-dusty-rose/30 w-full sm:w-auto bg-white dark:bg-gray-700 text-deep-plum dark:text-white"
               >
                 {sortOptions.map((option) => (
                   <option key={option.key} value={option.key}>

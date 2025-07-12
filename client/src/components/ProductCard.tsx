@@ -3,6 +3,7 @@ import { Heart } from "lucide-react";
 import { Product } from "@shared/schema";
 import { useCart } from "@/hooks/useCart";
 import { Button } from "@/components/ui/button";
+import { formatPrice } from "@/lib/formatPrice";
 
 interface ProductCardProps {
   product: Product;
@@ -31,11 +32,11 @@ export default function ProductCard({ product }: ProductCardProps) {
     }
   };
 
-  const displayPrice = product.salePrice ? parseFloat(product.salePrice) : parseFloat(product.price);
-  const originalPrice = product.salePrice ? parseFloat(product.price) : null;
+  const displayPrice = product.salePrice ? product.salePrice : product.price;
+  const originalPrice = product.salePrice ? product.price : null;
 
   return (
-    <div className="bg-white rounded-xl shadow-sm hover:shadow-lg transition-shadow duration-300 group overflow-hidden">
+    <div className="bg-white dark:bg-gray-800 rounded-xl shadow-sm hover:shadow-lg transition-shadow duration-300 group overflow-hidden">
       <div className="relative overflow-hidden">
         <img
           src={product.image}
@@ -55,7 +56,7 @@ export default function ProductCard({ product }: ProductCardProps) {
           <button
             onClick={() => setIsLiked(!isLiked)}
             className={`p-2 rounded-full shadow-md transition-colors ${
-              isLiked ? "bg-blush-pink text-white" : "bg-white hover:bg-gray-50"
+              isLiked ? "bg-blush-pink text-white" : "bg-white dark:bg-gray-700 hover:bg-gray-50 dark:hover:bg-gray-600"
             }`}
           >
             <Heart className={`h-4 w-4 ${isLiked ? "fill-current" : ""}`} />
@@ -64,17 +65,17 @@ export default function ProductCard({ product }: ProductCardProps) {
       </div>
       
       <div className="p-4">
-        <h3 className="font-semibold text-deep-plum mb-2">{product.name}</h3>
-        <p className="text-gray-600 text-sm mb-3">{product.description}</p>
+        <h3 className="font-semibold text-deep-plum dark:text-white mb-2">{product.name}</h3>
+        <p className="text-gray-600 dark:text-gray-300 text-sm mb-3">{product.description}</p>
         
         <div className="flex items-center justify-between">
           <div className="flex items-center space-x-2">
-            <span className="text-xl font-bold text-deep-plum">
-              ${displayPrice.toFixed(2)}
+            <span className="text-xl font-bold text-deep-plum dark:text-white">
+              {formatPrice(displayPrice)}
             </span>
             {originalPrice && (
-              <span className="text-gray-400 line-through">
-                ${originalPrice.toFixed(2)}
+              <span className="text-gray-400 dark:text-gray-500 line-through">
+                {formatPrice(originalPrice)}
               </span>
             )}
           </div>
