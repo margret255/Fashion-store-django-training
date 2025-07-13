@@ -43,7 +43,7 @@ export default function Header({ onCartOpen, onAuthOpen }: HeaderProps) {
         <nav className="flex items-center justify-between py-4">
           <div className="flex items-center flex-1 mr-4">
             <Link href="/" className="text-xl md:text-2xl font-bold text-deep-plum dark:text-white whitespace-nowrap">
-              <span className="text-dusty-rose">Amalia</span> Haven
+              <span className="bg-gradient-to-r from-purple-500 to-pink-500 bg-clip-text text-transparent">Amalia</span> Haven
             </Link>
             <div className="hidden lg:flex items-center space-x-6 ml-8">
               {navigation.map((item) => (
@@ -52,8 +52,8 @@ export default function Header({ onCartOpen, onAuthOpen }: HeaderProps) {
                   href={item.href}
                   className={`font-medium transition-colors whitespace-nowrap ${
                     location.startsWith(item.href)
-                      ? "text-dusty-rose"
-                      : "text-deep-plum dark:text-white hover:text-dusty-rose"
+                      ? "text-purple-500"
+                      : "text-deep-plum dark:text-white hover:text-purple-500"
                   }`}
                 >
                   {item.name}
@@ -81,33 +81,33 @@ export default function Header({ onCartOpen, onAuthOpen }: HeaderProps) {
             <div className="flex items-center space-x-2">
               <button
                 onClick={toggleTheme}
-                className="p-2 text-deep-plum dark:text-white hover:text-dusty-rose transition-colors"
+                className="p-2 text-deep-plum dark:text-white hover:text-purple-500 transition-colors"
               >
                 {theme === "light" ? <Moon className="h-5 w-5" /> : <Sun className="h-5 w-5" />}
               </button>
               <button
                 onClick={onAuthOpen}
-                className="p-2 text-deep-plum dark:text-white hover:text-dusty-rose transition-colors"
+                className="p-2 text-deep-plum dark:text-white hover:text-purple-500 transition-colors"
               >
                 <User className="h-5 w-5" />
               </button>
-              <button className="hidden sm:block p-2 text-deep-plum dark:text-white hover:text-dusty-rose transition-colors">
+              <button className="hidden sm:block p-2 text-deep-plum dark:text-white hover:text-purple-500 transition-colors">
                 <Heart className="h-5 w-5" />
               </button>
               <button
                 onClick={onCartOpen}
-                className="p-2 text-deep-plum dark:text-white hover:text-dusty-rose transition-colors relative"
+                className="p-2 text-deep-plum dark:text-white hover:text-purple-500 transition-colors relative"
               >
                 <ShoppingBag className="h-5 w-5" />
                 {getCartItemCount() > 0 && (
-                  <span className="absolute -top-1 -right-1 bg-blush-pink text-white text-xs rounded-full w-5 h-5 flex items-center justify-center">
+                  <span className="absolute -top-1 -right-1 bg-gradient-to-r from-purple-500 to-pink-500 text-white text-xs rounded-full w-5 h-5 flex items-center justify-center">
                     {getCartItemCount()}
                   </span>
                 )}
               </button>
               <button
                 onClick={() => setIsMenuOpen(!isMenuOpen)}
-                className="lg:hidden p-2 text-deep-plum dark:text-white hover:text-dusty-rose transition-colors"
+                className="lg:hidden p-2 text-deep-plum dark:text-white hover:text-purple-500 transition-colors"
               >
                 {isMenuOpen ? <X className="h-5 w-5" /> : <Menu className="h-5 w-5" />}
               </button>
@@ -123,7 +123,7 @@ export default function Header({ onCartOpen, onAuthOpen }: HeaderProps) {
                 <Link
                   key={item.name}
                   href={item.href}
-                  className="text-deep-plum dark:text-white hover:text-dusty-rose font-medium transition-colors py-2"
+                  className="text-deep-plum dark:text-white hover:text-purple-500 font-medium transition-colors py-2"
                   onClick={() => setIsMenuOpen(false)}
                 >
                   {item.name}

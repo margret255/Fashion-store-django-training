@@ -3,13 +3,13 @@ import { categories } from "@/data/categories";
 
 export default function CategoryGrid() {
   return (
-    <section className="py-16 bg-white">
+    <section className="py-16 bg-white dark:bg-gray-900">
       <div className="container mx-auto px-4">
         <div className="text-center mb-12">
-          <h2 className="text-3xl md:text-4xl font-bold text-deep-plum mb-4">
+          <h2 className="text-3xl md:text-4xl font-bold text-deep-plum dark:text-white mb-4">
             Shop by Category
           </h2>
-          <p className="text-gray-600 text-lg">
+          <p className="text-gray-600 dark:text-gray-300 text-lg">
             Discover curated collections for every aspect of your style
           </p>
         </div>

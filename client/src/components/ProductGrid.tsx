@@ -69,10 +69,10 @@ export default function ProductGrid({ products, title, subtitle, showFilters = f
                     key={filterOption.key}
                     variant={filter === filterOption.key ? "default" : "outline"}
                     onClick={() => setFilter(filterOption.key)}
-                    className={`px-4 md:px-6 py-2 md:py-3 rounded-full font-medium transition-colors whitespace-nowrap ${
+                    className={`px-4 md:px-6 py-2 md:py-3 rounded-full font-medium transition-all duration-300 whitespace-nowrap ${
                       filter === filterOption.key
-                        ? "bg-soft-mauve text-white hover:bg-soft-mauve/80"
-                        : "text-deep-plum dark:text-white hover:text-dusty-rose"
+                        ? "bg-gradient-to-r from-purple-500 to-pink-500 text-white shadow-lg hover:from-purple-600 hover:to-pink-600 transform hover:scale-105"
+                        : "text-deep-plum dark:text-white hover:text-purple-500 border border-purple-300 hover:border-purple-500"
                     }`}
                   >
                     {filterOption.label}

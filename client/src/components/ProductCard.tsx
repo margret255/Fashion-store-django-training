@@ -20,15 +20,15 @@ export default function ProductCard({ product }: ProductCardProps) {
   const getTagColor = (tag: string) => {
     switch (tag) {
       case "new":
-        return "bg-blush-pink";
+        return "bg-gradient-to-r from-purple-500 to-pink-500";
       case "sale":
-        return "bg-gold";
+        return "bg-gradient-to-r from-orange-400 to-red-500";
       case "trending":
-        return "bg-blush-pink";
+        return "bg-gradient-to-r from-purple-500 to-pink-500";
       case "limited":
-        return "bg-gold";
+        return "bg-gradient-to-r from-yellow-400 to-orange-500";
       default:
-        return "bg-soft-mauve";
+        return "bg-gradient-to-r from-purple-400 to-pink-400";
     }
   };
 
@@ -82,7 +82,7 @@ export default function ProductCard({ product }: ProductCardProps) {
           
           <Button
             onClick={handleAddToCart}
-            className="bg-dusty-rose text-white px-4 py-2 rounded-full text-sm font-medium hover:bg-dusty-rose/80 transition-colors"
+            className="bg-gradient-to-r from-purple-500 to-pink-500 text-white px-4 py-2 rounded-full text-sm font-medium hover:from-purple-600 hover:to-pink-600 transition-all duration-300 shadow-lg hover:shadow-xl transform hover:scale-105"
           >
             Add to Cart
           </Button>
