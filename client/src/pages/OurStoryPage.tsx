@@ -63,11 +63,11 @@ export default function OurStoryPage() {
               <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 items-center">
                 <div className="space-y-4">
                   <div className="text-center lg:text-left">
-                    <h3 className="text-2xl font-bold text-deep-plum dark:text-white">Grace Wanjiku</h3>
+                    <h3 className="text-2xl font-bold text-deep-plum dark:text-white">Wangui Margaret</h3>
                     <p className="text-dusty-rose font-medium">Founder & Creative Director</p>
                   </div>
                   <p className="text-gray-600 dark:text-gray-300">
-                    "Growing up in Nairobi, I watched my mother and sisters struggle to find affordable, quality fashion that truly represented who they were. I realized there was a gap in the market for fashion that was both stylish and accessible to the everyday Kenyan woman."
+                    "Growing up in as a kid, I watched my mother and sisters struggle to find affordable, quality fashion that truly represented who they were. I realized there was a gap in the market for fashion that was both stylish and accessible to the everyday Kenyan woman."
                   </p>
                   <p className="text-gray-600 dark:text-gray-300">
                     "After studying fashion merchandising and working in retail for several years, I decided to create Amalia Haven—a brand that would celebrate African women's beauty while providing them with fashion-forward pieces that fit their lifestyles and budgets."
