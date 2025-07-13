@@ -11,19 +11,19 @@ export default function Footer() {
   ];
 
   const supportLinks = [
-    { name: "Contact Us", href: "#" },
-    { name: "Size Guide", href: "#" },
-    { name: "Shipping & Returns", href: "#" },
-    { name: "Track Your Order", href: "#" },
-    { name: "FAQs", href: "#" }
+    { name: "Contact Us", href: "/contact" },
+    { name: "Size Guide", href: "/size-guide" },
+    { name: "Shipping & Returns", href: "/shipping-returns" },
+    { name: "Track Your Order", href: "/track-order" },
+    { name: "FAQs", href: "/faq" }
   ];
 
   const aboutLinks = [
-    { name: "Our Story", href: "#" },
-    { name: "Sustainability", href: "#" },
-    { name: "Careers", href: "#" },
-    { name: "Privacy Policy", href: "#" },
-    { name: "Terms of Service", href: "#" }
+    { name: "Our Story", href: "/our-story" },
+    { name: "Sustainability", href: "/sustainability" },
+    { name: "Careers", href: "/careers" },
+    { name: "Privacy Policy", href: "/privacy-policy" },
+    { name: "Terms of Service", href: "/terms-of-service" }
   ];
 
   return (

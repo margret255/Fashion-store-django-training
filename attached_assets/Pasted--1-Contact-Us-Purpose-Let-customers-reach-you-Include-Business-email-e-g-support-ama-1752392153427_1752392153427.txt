@@ -1,0 +1,159 @@
+🛠️ 1. Contact Us
+
+Purpose: Let customers reach you.
+
+Include:
+
+    Business email (e.g. support@amaliahaven.com)
+
+    Phone number (optional)
+
+    Physical address (if applicable)
+
+    Contact form (Name, Email, Message)
+
+    Customer service hours
+
+    Social media links
+
+📏 2. Size Guide
+
+Purpose: Help customers choose the right size.
+
+Include:
+
+    Size charts for different categories: tops, dresses, shoes, etc.
+
+    International size conversions (e.g. US, UK, EU)
+
+    Measurement instructions (with diagrams or illustrations)
+
+    Fit descriptions (slim fit, oversized, etc.)
+
+🚚 3. Shipping & Returns
+
+Purpose: Set clear expectations.
+
+Include:
+
+    Shipping options (standard, express)
+
+    Delivery times per region
+
+    Return policy (e.g. return within 14 days)
+
+    Conditions for return (e.g. unused, tags attached)
+
+    How to return (steps + return address)
+
+    Who covers return shipping cost?
+
+📦 4. Track Your Order
+
+Purpose: Let customers check delivery status.
+
+Include:
+
+    An input field for order number or email
+
+    Instructions on where to find the order number
+
+    Optional: Link to courier tracking
+
+    Example: “Track your order using the email you used to checkout or your order ID.”
+
+❓ 5. FAQs (Frequently Asked Questions)
+
+Purpose: Save time for customers and support.
+
+Include answers to:
+
+    How long does shipping take?
+
+    Can I cancel my order?
+
+    Do you ship internationally?
+
+    What payment methods do you accept?
+
+    How do I return an item?
+
+    What if I received a damaged item?
+
+🧵 6. Our Story
+
+Purpose: Build emotional connection.
+
+Include:
+
+    Why and how Amalia Haven started
+
+    Mission and values
+
+    Inspiration behind the brand
+
+    Founder’s story
+
+    High-quality photos, possibly from behind the scenes
+
+🌱 7. Sustainability
+
+Purpose: Show your commitment to the planet.
+
+Include:
+
+    Eco-friendly practices (e.g. biodegradable packaging)
+
+    Ethical sourcing or production
+
+    Reducing waste or carbon footprint
+
+    Certifications if any (e.g. Fair Trade, GOTS)
+
+👩‍💼 8. Careers
+
+Purpose: Attract potential team members.
+
+Include:
+
+    Current open positions
+
+    Job descriptions and application process
+
+    Company culture summary
+
+    Benefits (if applicable)
+
+    Contact for HR/careers
+
+🔒 9. Privacy Policy
+
+Purpose: Legally required — builds trust.
+
+Include:
+
+    What personal data you collect (name, email, payment info)
+
+    How it’s used
+
+    Third-party services (like Stripe or Google Analytics)
+
+    How data is stored and protected
+
+    Customer rights (GDPR or Kenyan laws if local)
+
+📜 10. Terms of Service
+
+Purpose: Protect your business legally.
+
+Include:
+
+    Purchase agreement
+
+    Return/refund conditions
+
+    Use of website rules (e.g. no spamming)
+
+    Intellectual property note (your designs/content)
+
+    Limitations of liability

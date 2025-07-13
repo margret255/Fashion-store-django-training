@@ -15,6 +15,16 @@ import LoginPage from "@/pages/LoginPage";
 import SignupPage from "@/pages/SignupPage";
 import ProductsPage from "@/pages/ProductsPage";
 import CartPage from "@/pages/CartPage";
+import ContactPage from "@/pages/ContactPage";
+import SizeGuidePage from "@/pages/SizeGuidePage";
+import ShippingReturnsPage from "@/pages/ShippingReturnsPage";
+import TrackOrderPage from "@/pages/TrackOrderPage";
+import FAQPage from "@/pages/FAQPage";
+import OurStoryPage from "@/pages/OurStoryPage";
+import SustainabilityPage from "@/pages/SustainabilityPage";
+import CareersPage from "@/pages/CareersPage";
+import PrivacyPolicyPage from "@/pages/PrivacyPolicyPage";
+import TermsOfServicePage from "@/pages/TermsOfServicePage";
 import NotFound from "@/pages/not-found";
 
 function Router() {
@@ -36,6 +46,16 @@ function Router() {
           <Route path="/products" component={ProductsPage} />
           <Route path="/products/:category" component={ProductsPage} />
           <Route path="/cart" component={CartPage} />
+          <Route path="/contact" component={ContactPage} />
+          <Route path="/size-guide" component={SizeGuidePage} />
+          <Route path="/shipping-returns" component={ShippingReturnsPage} />
+          <Route path="/track-order" component={TrackOrderPage} />
+          <Route path="/faq" component={FAQPage} />
+          <Route path="/our-story" component={OurStoryPage} />
+          <Route path="/sustainability" component={SustainabilityPage} />
+          <Route path="/careers" component={CareersPage} />
+          <Route path="/privacy-policy" component={PrivacyPolicyPage} />
+          <Route path="/terms-of-service" component={TermsOfServicePage} />
           <Route component={NotFound} />
         </Switch>
       </main>
