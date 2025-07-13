@@ -6,7 +6,7 @@ export default function Hero() {
       <div
         className="absolute inset-0 bg-gradient-to-r from-dusty-rose/20 to-soft-mauve/20"
         style={{
-          backgroundImage: "url('https://images.unsplash.com/photo-1441986300917-64674bd600d8?ixlib=rb-4.0.3&auto=format&fit=crop&w=1920&h=1080')",
+          backgroundImage: "url('https://images.unsplash.com/photo-1469334031218-e382a71b716b?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1920&h=1080')",
           backgroundSize: "cover",
           backgroundPosition: "center"
         }}

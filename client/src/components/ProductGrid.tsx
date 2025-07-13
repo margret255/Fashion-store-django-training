@@ -2,16 +2,19 @@ import { useState } from "react";
 import { Product } from "@shared/schema";
 import ProductCard from "./ProductCard";
 import { Button } from "@/components/ui/button";
+import { subcategories } from "@/data/subcategories";
 
 interface ProductGridProps {
   products: Product[];
   title?: string;
   subtitle?: string;
   showFilters?: boolean;
+  category?: string;
 }
 
-export default function ProductGrid({ products, title, subtitle, showFilters = false }: ProductGridProps) {
+export default function ProductGrid({ products, title, subtitle, showFilters = false, category }: ProductGridProps) {
   const [filter, setFilter] = useState<string>("all");
+  const [subcategoryFilter, setSubcategoryFilter] = useState<string>("all");
   const [sortBy, setSortBy] = useState<string>("featured");
 
   const filters = [
@@ -21,6 +24,13 @@ export default function ProductGrid({ products, title, subtitle, showFilters = f
     { key: "sale", label: "Sale" }
   ];
 
+  const getSubcategoryFilters = () => {
+    if (category && subcategories[category as keyof typeof subcategories]) {
+      return subcategories[category as keyof typeof subcategories];
+    }
+    return [{ key: "all", label: "All" }];
+  };
+
   const sortOptions = [
     { key: "featured", label: "Featured" },
     { key: "price-low", label: "Price: Low to High" },
@@ -29,8 +39,13 @@ export default function ProductGrid({ products, title, subtitle, showFilters = f
   ];
 
   const filteredProducts = products.filter(product => {
-    if (filter === "all") return true;
-    return product.tags?.includes(filter);
+    // Filter by tags
+    if (filter !== "all" && !product.tags?.includes(filter)) return false;
+    
+    // Filter by subcategory
+    if (subcategoryFilter !== "all" && product.subcategory !== subcategoryFilter) return false;
+    
+    return true;
   });
 
   const sortedProducts = [...filteredProducts].sort((a, b) => {
@@ -62,35 +77,58 @@ export default function ProductGrid({ products, title, subtitle, showFilters = f
           </div>
           
           {showFilters && (
-            <div className="flex flex-col sm:flex-row gap-4 w-full lg:w-auto">
-              <div className="flex items-center space-x-2 md:space-x-4 overflow-x-auto pb-2 sm:pb-0">
-                {filters.map((filterOption) => (
-                  <Button
-                    key={filterOption.key}
-                    variant={filter === filterOption.key ? "default" : "outline"}
-                    onClick={() => setFilter(filterOption.key)}
-                    className={`px-4 md:px-6 py-2 md:py-3 rounded-full font-medium transition-all duration-300 whitespace-nowrap ${
-                      filter === filterOption.key
-                        ? "bg-gradient-to-r from-purple-500 to-pink-500 text-white shadow-lg hover:from-purple-600 hover:to-pink-600 transform hover:scale-105"
-                        : "text-deep-plum dark:text-white hover:text-purple-500 border border-purple-300 hover:border-purple-500"
-                    }`}
-                  >
-                    {filterOption.label}
-                  </Button>
-                ))}
-              </div>
+            <div className="flex flex-col gap-4 w-full lg:w-auto">
+              {/* Subcategory Filters */}
+              {category && (
+                <div className="flex items-center space-x-2 md:space-x-4 overflow-x-auto pb-2 sm:pb-0">
+                  {getSubcategoryFilters().map((subcategoryOption) => (
+                    <Button
+                      key={subcategoryOption.key}
+                      variant={subcategoryFilter === subcategoryOption.key ? "default" : "outline"}
+                      onClick={() => setSubcategoryFilter(subcategoryOption.key)}
+                      className={`px-4 md:px-6 py-2 md:py-3 rounded-full font-medium transition-all duration-300 whitespace-nowrap ${
+                        subcategoryFilter === subcategoryOption.key
+                          ? "bg-gradient-to-r from-purple-500 to-pink-500 text-white shadow-lg hover:from-purple-600 hover:to-pink-600 transform hover:scale-105"
+                          : "text-deep-plum dark:text-white hover:text-purple-500 border border-purple-300 hover:border-purple-500"
+                      }`}
+                    >
+                      {subcategoryOption.label}
+                    </Button>
+                  ))}
+                </div>
+              )}
               
-              <select
-                value={sortBy}
-                onChange={(e) => setSortBy(e.target.value)}
-                className="px-4 py-2 border border-dusty-rose/20 dark:border-gray-600 rounded-full focus:outline-none focus:ring-2 focus:ring-dusty-rose/30 w-full sm:w-auto bg-white dark:bg-gray-700 text-deep-plum dark:text-white"
-              >
-                {sortOptions.map((option) => (
-                  <option key={option.key} value={option.key}>
-                    {option.label}
-                  </option>
-                ))}
-              </select>
+              {/* Tag Filters */}
+              <div className="flex items-center justify-between">
+                <div className="flex items-center space-x-2 md:space-x-4 overflow-x-auto pb-2 sm:pb-0">
+                  {filters.map((filterOption) => (
+                    <Button
+                      key={filterOption.key}
+                      variant={filter === filterOption.key ? "default" : "outline"}
+                      onClick={() => setFilter(filterOption.key)}
+                      className={`px-4 md:px-6 py-2 md:py-3 rounded-full font-medium transition-all duration-300 whitespace-nowrap ${
+                        filter === filterOption.key
+                          ? "bg-gradient-to-r from-purple-500 to-pink-500 text-white shadow-lg hover:from-purple-600 hover:to-pink-600 transform hover:scale-105"
+                          : "text-deep-plum dark:text-white hover:text-purple-500 border border-purple-300 hover:border-purple-500"
+                      }`}
+                    >
+                      {filterOption.label}
+                    </Button>
+                  ))}
+                </div>
+                
+                <select
+                  value={sortBy}
+                  onChange={(e) => setSortBy(e.target.value)}
+                  className="px-4 py-2 border border-dusty-rose/20 dark:border-gray-600 rounded-full focus:outline-none focus:ring-2 focus:ring-dusty-rose/30 w-full sm:w-auto bg-white dark:bg-gray-700 text-deep-plum dark:text-white"
+                >
+                  {sortOptions.map((option) => (
+                    <option key={option.key} value={option.key}>
+                      {option.label}
+                    </option>
+                  ))}
+                </select>
+              </div>
             </div>
           )}
         </div>

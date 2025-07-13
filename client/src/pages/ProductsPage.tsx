@@ -10,6 +10,7 @@ export default function ProductsPage() {
   const [filteredProducts, setFilteredProducts] = useState<Product[]>(products);
   const [pageTitle, setPageTitle] = useState("All Products");
   const [pageSubtitle, setPageSubtitle] = useState("Discover our complete collection");
+  const [categorySlug, setCategorySlug] = useState<string | null>(null);
 
   useEffect(() => {
     const pathParts = location.split("/");
@@ -26,6 +27,7 @@ export default function ProductsPage() {
       setFilteredProducts(searchResults);
       setPageTitle(`Search Results for "${searchQuery}"`);
       setPageSubtitle(`Found ${searchResults.length} products`);
+      setCategorySlug(null);
     } else if (categorySlug && categorySlug !== "products") {
       const category = categories.find(cat => cat.slug === categorySlug);
       if (category) {
@@ -33,20 +35,24 @@ export default function ProductsPage() {
         setFilteredProducts(categoryProducts);
         setPageTitle(category.name);
         setPageSubtitle(category.description || "Explore our collection");
+        setCategorySlug(categorySlug);
       } else if (categorySlug === "sale") {
         const saleProducts = products.filter(product => product.salePrice);
         setFilteredProducts(saleProducts);
         setPageTitle("Sale Items");
         setPageSubtitle("Limited time offers you don't want to miss");
+        setCategorySlug(null);
       } else {
         setFilteredProducts(products);
         setPageTitle("All Products");
         setPageSubtitle("Discover our complete collection");
+        setCategorySlug(null);
       }
     } else {
       setFilteredProducts(products);
       setPageTitle("All Products");
       setPageSubtitle("Discover our complete collection");
+      setCategorySlug(null);
     }
   }, [location]);
 
@@ -57,6 +63,7 @@ export default function ProductsPage() {
         title={pageTitle}
         subtitle={pageSubtitle}
         showFilters={true}
+        category={categorySlug}
       />
     </div>
   );

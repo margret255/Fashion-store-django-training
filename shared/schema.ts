@@ -27,6 +27,7 @@ export const products = pgTable("products", {
   salePrice: decimal("sale_price", { precision: 10, scale: 2 }),
   image: text("image").notNull(),
   category: text("category").notNull(),
+  subcategory: text("subcategory"),
   inStock: boolean("in_stock").default(true),
   featured: boolean("featured").default(false),
   tags: text("tags").array(),
